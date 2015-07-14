@@ -14,8 +14,3 @@ $(function () {
 	var repliesUrl = "http://localhost:3000/replies/";
     var tweetsUrl = "http://localhost:3000/tweets/";
     var usersUrl = "http://localhost:3000/users/";
-
-   
-
-
-
