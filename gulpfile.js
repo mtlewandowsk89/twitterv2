@@ -8,29 +8,23 @@ var clean = require('gulp-clean');
 
 var jshint = require('gulp-jshint');
 var del = require('del');
-var uglify = require ('gulp-uglify');
+var watch = require('gulp-watch');
  
 gulp.task('lint', function() {
-  return gulp.src('js/*.js')
+  return gulp.src(['js/*.js', '!./js/bundle.js'])
     .pipe(jshint())
     .pipe(jshint.reporter('default'));
 });
  
-gulp.task('clean', function () {
-    return gulp.src('js/bundle.js', {read: false})
-        .pipe(clean());
+gulp.task('clean', function (cb) {
+  del('./js/bundle.js', cb)
 });
 
-gulp.task('uglify', ['build'], function () {
-  return gulp.src('js/bundle.js')
-    .pipe(uglify())
-    .pipe(gulp.dest('js'))
-})
-
 gulp.task('watch', function() {
-  return gulp.watch(['js/*.js', 'js/bundle.js'], ['build'])
-})
+  gulp.watch(['./js/*.js', '!./js/bundle.js'], ['build'])
+});
 
+gulp.task('default', ['build', 'lint', 'watch']);
 
 // Browserify
 var source = require('vinyl-source-stream');
@@ -76,4 +70,4 @@ gulp.task('serve:web', serve({
   port: 8000
 }));
 
-gulp.task('serve', ['serve:api', 'serve:web'])
+gulp.task('serve', ['serve:api', 'serve:web']);

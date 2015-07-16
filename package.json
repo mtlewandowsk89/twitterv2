@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "browser-sync": "^2.7.13",
     "browserify": "^10.2.3",
     "del": "^1.2.0",
     "gulp": "^3.9.0",
@@ -17,12 +18,14 @@
     "gulp-jshint": "^1.11.2",
     "gulp-serve": "^1.0.0",
     "gulp-util": "^3.0.6",
+    "gulp-watch": "^4.3.2",
     "hbsfy": "^2.2.1",
     "json-server": "^0.7.20",
     "vinyl-source-stream": "^1.1.0"
   },
   "private": true,
   "dependencies": {
+    "gulp-rimraf": "^0.1.1",
     "gulp-uglify": "^1.2.0",
     "handlebars": "^3.0.3",
     "jquery": "^2.1.4",
