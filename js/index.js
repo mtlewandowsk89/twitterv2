@@ -5,11 +5,11 @@ var template = require('./template.js');
 
 $(function () {
 
-	var currentUser = {
-	  id: 1,
-	  img: './images/brad.png',
-	  handle: '@bradwestfall',
-	  realName: 'Brad Westfall'
+    var currentUser = {
+        id: 1,
+        img: './images/brad.png',
+        handle: '@bradwestfall',
+        realName: 'Brad Westfall'
 	};
 
 	var repliesUrl = "http://localhost:3000/replies/";

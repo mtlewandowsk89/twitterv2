@@ -2,13 +2,11 @@
 
 var gulp = require('gulp');
 var gutil = require('gulp-util');
-var clean = require('gulp-clean');
 
 // Add your require statements and gulp tasks here
 
 var jshint = require('gulp-jshint');
 var del = require('del');
-var watch = require('gulp-watch');
  
 gulp.task('lint', function() {
   return gulp.src(['js/*.js', '!./js/bundle.js'])
